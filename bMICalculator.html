@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="BMI Calculator">
+        <div class="app" style= {backgroundStyle}>
+            <div class="box">
+                <h2 class="heading">BMI Calculator</h2>
+                   <form>
+                    <div class="slds-p-around_medium lgc-bg">
+                        <label class="slds-form-element__label" for="height">Height(cm)</label>
+                        <lightning-input type="Number" id="height" placeholder="Enter Height" onchange={handleHeight}></lightning-input>
+                    </div>
+                    <div class="slds-p-around_medium lgc-bg">
+                        <lightning-input type="Number" label="Weight(cm)" placeholder="Enter Weight" onchange={handleWeight}></lightning-input>
+                    </div>
+                    <div>
+                        <lightning-button variant="destructive" label="Calculate" title="Destructive action" onclick={handleCalculateClick} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                    {result}
+                    
+                   </form>
+                   
+                   <div class="info-wrapper">
+                    <h3>What is your BMI means</h3>
+                    <p class="slds-var-m-bottom_large">Once you have measured your BMI, you can determine your healthy weight range. If your BMI is:</p>
+                    <h4 class="slds-text-color_error slds-text-heading_medium">Under 18.5</h4>
+                    <p class="slds-var-m-bottom_large">You are very underweight and possibly malnourished</p>
+                    <h4 class="slds-text-color_success slds-text-heading_medium">Between 18.5 to 24.9</h4>
+                    <p class="slds-var-m-bottom_large">You have a healthy weight range for young and middle-aged adults.</p>
+                    <h4 class="slds-text-color_error slds-text-heading_medium">25.0 to 29.9</h4>
+                    <p class="slds-var-m-bottom_large">You are overweight</p>
+                    <h4 class="slds-text-color_error slds-text-heading_medium">Over 30</h4>
+                    <p class="slds-var-m-bottom_large">You are obese</p>
+                   </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>
